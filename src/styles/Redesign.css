@@ -101,9 +101,9 @@
 .neon-circle { width: 34px; height: 34px; border: 1px solid #008dcc; border-radius: 50%; display: grid; place-items: center; font-size: 19px; }
 .neon-circle:hover { background: #007fb733; }
 .about-services-grid { display: grid; grid-template-columns: 1.08fr 1fr; gap: 32px; }
-.neon-about-services { position: relative; }
+.neon-about-services { position: relative; background: radial-gradient(ellipse at 30% 50%,#04355b33,transparent 56%); }
 .neon-about { position: relative; min-height: 345px; padding: 38px 0; }
-.neon-about-art { object-fit: cover; object-position: center; }
+.neon-about-art { object-fit: cover; object-position: center; mask-image: linear-gradient(90deg,transparent 0%,#000 13%,#000 72%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 16%,#000 78%,transparent 100%); mask-composite: intersect; }
 .about-shade { position: absolute; inset: 0; background: linear-gradient(90deg,#020b1255,transparent 60%),linear-gradient(0deg,#020b1222,transparent 20%); }
 .neon-about-copy { position: relative; z-index: 1; width: 250px; max-width: 52%; }
 .neon-about h2 { font-size: clamp(27px,2.7vw,38px); margin-bottom: 15px; }
@@ -125,7 +125,7 @@
 .neon-stack>.neon-wrap { padding-block: 28px 32px; }
 .neon-stack h2 { font-size: clamp(25px,2.35vw,33px); margin-bottom: 15px; }
 .stack-content { width: 69%; position: relative; z-index: 1; }
-.neon-tech-list { display: grid; grid-template-columns: repeat(10,minmax(0,1fr)); gap: 7px; }
+.neon-tech-list { display: grid; grid-template-columns: repeat(8,minmax(0,1fr)); gap: 7px; }
 .neon-tech { border: 1px solid #1c3546; border-radius: 7px; min-height: 85px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(150deg,#06152188,#030b13cc); transition: border-color .3s, transform .3s; }
 .neon-tech:hover { border-color: #008ddd; transform: translateY(-3px); }
 .neon-tech>svg { width: 29px; height: 29px; }
@@ -235,7 +235,7 @@
   .neon-service { padding: 22px; }
   .neon-stack>.neon-wrap { padding-block: 30px; }
   .stack-content { width: 100%; }
-  .neon-tech-list { grid-template-columns: repeat(10,minmax(0,1fr)); }
+  .neon-tech-list { grid-template-columns: repeat(8,minmax(0,1fr)); }
   .network-art { display: none; }
   .neon-contact-grid { gap: 7%; grid-template-columns: 1.5fr 1fr; }
   .neon-footer-top { flex-wrap: wrap; }

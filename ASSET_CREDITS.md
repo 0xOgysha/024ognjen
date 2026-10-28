@@ -1,6 +1,7 @@
 # Asset credits
 
-- Current hero and About illustrations, and the four project cover illustrations: generated with built-in ImageGen to match the user-supplied neon portfolio sketch. These are decorative illustrations. They are not actual photographs of Ognjen, his desk, clients or products; the detail galleries contain real supplied website screenshots. Paths and prompts are documented in IMAGE_PROMPTS.md.
+- Hero, About and the ice-cream/bakery project cover illustrations: generated with built-in ImageGen to match the user-supplied neon portfolio sketch. These are decorative illustrations. They are not actual photographs of Ognjen, his desk, clients or products; the detail galleries contain real supplied website screenshots. Paths and prompts are documented in IMAGE_PROMPTS.md. Earlier unused Pljeskovac/AmongMP illustrations remain in the source assets.
+- Current Pljeskovac card cover: actual landing capture at public/projects/pljeskovac-016/home.jpg. MeetOgy cover: native text and CSS, with no generated product preview.
 - Earlier, unused workspace photograph retained in `public/images/workspace.jpg`: Nikita Kachanovsky, “My desk”, Unsplash. https://unsplash.com/photos/OVbeSXRk_9E (Unsplash license).
 - Raven emblem: supplied `gavran-svi-logoi-i-wallpaper.zip`.
 - Existing project images: supplied portfolio ZIP.

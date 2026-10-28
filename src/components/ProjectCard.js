@@ -4,10 +4,12 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projectPreviews } from "@/data/projectPreviews";
+import "@/styles/MeetOgy.css";
 
 const presentation = {
   "pljeskovac-016": {
-    cover: "/images/cover-pljeskovac.png",
+    cover: "/projects/pljeskovac-016/home.jpg",
+    coverAlt: "Pljeskovac 016 actual landing page",
     category: "RESTAURANT WEBSITE",
     summary: "Modern website for a restaurant with menu, delivery zones and online ordering information.",
   },
@@ -21,10 +23,10 @@ const presentation = {
     category: "BUSINESS WEBSITE",
     summary: "Bakery website with a product catalog, categories, contact form and an admin panel.",
   },
-  amongmp: {
-    cover: "/images/cover-amongmp.png",
-    category: "PERSONAL PROJECT",
-    summary: "A multiplayer project with custom gameplay systems, player roles and database integration.",
+  meetogy: {
+    cover: null,
+    category: "PRIVATE PROJECT",
+    summary: "Currently a private project idea.",
   },
 };
 
@@ -63,7 +65,7 @@ export default function ProjectCard({ project }) {
       onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
     >
       <Link className="project-cover" href={href} aria-label={`Explore ${project.title}`}>
-        <Image className="project-cover-art" src={details.cover} alt={`${project.title} illustrated project cover`} fill sizes="(max-width: 540px) 90vw, (max-width: 900px) 44vw, 23vw" />
+        {details.cover ? <Image className="project-cover-art" src={details.cover} alt={details.coverAlt || `${project.title} illustrated project cover`} fill sizes="(max-width: 540px) 90vw, (max-width: 900px) 44vw, 23vw" /> : <div className="meetogy-cover"><span className="meetogy-orbit" aria-hidden="true" /><strong>meet<span>ogy</span></strong><small><i className="bi bi-lock" aria-hidden="true" /> PRIVATE IDEA</small></div>}
         {frames && <span className="preview-hint" aria-hidden="true"><i className="bi bi-play-fill" /> Preview</span>}
         {prepared && frames && !failed && <div className="project-preview" aria-hidden="true">
           <div className="preview-browser"><span>● ● ●</span><span>PROJECT PREVIEW</span><i /></div>
@@ -87,8 +89,8 @@ export default function ProjectCard({ project }) {
         <span className="card-category">/ {details.category}</span>
         <h3><Link href={href}>{project.title}</Link></h3>
         <p>{details.summary}</p>
-        <div className="neon-tags">{project.technologies.slice(0, 4).map(tech => <span key={tech}>{tech}</span>)}</div>
-        <Link className="neon-circle" href={href} aria-label={`View ${project.title}`}><i className="bi bi-arrow-up-right" aria-hidden="true" /></Link>
+        <div className="neon-tags">{project.private ? <span>PRIVATE IDEA</span> : project.technologies.slice(0, 4).map(tech => <span key={tech}>{tech}</span>)}</div>
+        <Link className="neon-circle" href={href} aria-label={`View ${project.title}`}><i className={`bi bi-${project.private ? "lock" : "arrow-up-right"}`} aria-hidden="true" /></Link>
       </div>
     </article>
   );

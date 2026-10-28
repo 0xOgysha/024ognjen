@@ -1,13 +1,13 @@
 import "@/styles/ProjectPage.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { projects } from "@/data/projects";
+import { projects, archivedProjects } from "@/data/projects";
 import Image from "next/image";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const project = projects.find(
+  const project = [...projects, ...archivedProjects].find(
     (item) => item.slug === slug
   );
 
@@ -24,18 +24,22 @@ export async function generateMetadata({ params }) {
 }
 
 export function generateStaticParams() {
-  return projects.map(({ slug }) => ({ slug }));
+  return [...projects, ...archivedProjects].map(({ slug }) => ({ slug }));
 }
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
 
-  const project = projects.find(
+  const project = [...projects, ...archivedProjects].find(
     (item) => item.slug === slug
   );
 
   if (!project) {
     notFound();
+  }
+
+  if (project.private) {
+    return <main className="project-page private-project-page"><nav className="project-page-nav"><Link href="/" className="brand"><span className="brand-number">/024</span></Link><Link href="/#projects" className="back-projects">← BACK TO PROJECTS</Link></nav><section className="private-project-content"><span className="private-project-label">PRIVATE IDEA</span><h1>{project.title}<span>.</span></h1><p>{project.description}</p></section></main>;
   }
 
   return (

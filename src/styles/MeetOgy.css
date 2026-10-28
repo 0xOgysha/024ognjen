@@ -1,0 +1,7 @@
+.meetogy-cover { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:13px; overflow:hidden; isolation:isolate; background:radial-gradient(ellipse at 50% 60%,#0c3b614f,#03101d 75%); }
+.meetogy-cover::before { content:""; position:absolute; inset:0; z-index:-1; background-image:linear-gradient(#0d2d4544 1px,transparent 1px),linear-gradient(90deg,#0d2d4544 1px,transparent 1px); background-size:20px 20px; mask-image:radial-gradient(ellipse,#000,transparent 75%); }
+.meetogy-cover strong { font-size:30px; font-weight:500; letter-spacing:-1.2px; color:#eaf7ff; }
+.meetogy-cover strong>span { color:#00adff; }
+.meetogy-cover small { font-size:7px; letter-spacing:2px; color:#9db8ce; display:flex; gap:5px; align-items:center; }
+.meetogy-orbit { position:absolute; width:165px; height:165px; border:1px solid #1594cb22; border-radius:50%; transform:rotateX(55deg) rotate(-24deg); pointer-events:none; z-index:-1; }
+.meetogy-orbit::after { content:""; width:4px; height:4px; border-radius:50%; background:#02a8ec; box-shadow:0 0 12px #00aaff; position:absolute; left:15%; top:13%; }

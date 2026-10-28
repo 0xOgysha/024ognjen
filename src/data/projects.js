@@ -74,6 +74,16 @@ export const projects = [
   },
 
   {
+    id: "05", slug: "meetogy", title: "MeetOgy", private: true,
+    category: "personal", categoryLabel: "PRIVATE IDEA", year: "2026", status: "PRIVATE IDEA",
+    description: "Currently a private project idea.",
+    technologies: [], image: null, github: null, live: null, features: [],
+  },
+];
+
+// Preserve existing detail URLs without featuring the archived project in the portfolio.
+export const archivedProjects = [
+  {
     id: "03",
     slug: "amongmp",
     title: "AmongMP",

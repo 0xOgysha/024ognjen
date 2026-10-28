@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 
 const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:3000';
-const slugs = ['pljeskovac-016', 'andjini-sladoledi', 'andja-i-kolaci', 'amongmp'];
+const slugs = ['pljeskovac-016', 'andjini-sladoledi', 'andja-i-kolaci', 'meetogy'];
 const home = await fetch(base);
 assert.equal(home.status, 200);
 const html = await home.text();
@@ -13,8 +13,16 @@ for (const slug of slugs) {
   const response = await fetch(`${base}/projects/${slug}`);
   assert.equal(response.status, 200, `Project route failed: ${slug}`);
   const page = await response.text();
-  assert.ok(page.includes('WHAT') && page.includes('INSIDE'), `Missing features: ${slug}`);
+  if (slug === 'meetogy') {
+    assert.ok(page.includes('Currently a private project idea.'), 'Private project note missing');
+    assert.ok(!page.includes('WHAT') && !page.includes('GALLERY'), 'Private project exposes extra sections');
+  } else {
+    assert.ok(page.includes('WHAT') && page.includes('INSIDE'), `Missing features: ${slug}`);
+  }
 }
+assert.equal((await fetch(`${base}/projects/amongmp`)).status, 200, 'Archived URL should remain accessible');
+assert.ok(html.includes('MeetOgy') && !html.includes('AmongMP'), 'Featured project replacement failed');
+for (const language of ['C#', 'C++', 'PHP', 'Python']) assert.ok(html.includes(language), `Missing language: ${language}`);
 const archive = await fetch(`${base}/projects`);
 assert.equal(archive.status, 200, 'Project archive route failed');
 assert.ok((await archive.text()).includes('Filter projects'), 'Archive filters missing');

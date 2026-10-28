@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import { technologies } from "@/data/technologies";
 import OgyAssistant from "@/components/OgyAssistant";
 import ProjectCard from "@/components/ProjectCard";
 import TechIcon from "@/components/TechIcon";
@@ -11,7 +12,6 @@ import NetworkArt from "@/components/NetworkArt";
 import "@/styles/Redesign.css";
 
 const navigation = [["Home", "top"], ["Projects", "projects"], ["About", "about"], ["Contact", "contact"]];
-const technologies = ["Next.js", "React", "JavaScript", "HTML5", "CSS3", "Supabase", "Bootstrap", "SQL", "Git", "GitHub"];
 const services = [
   ["display", "Web Development", "Modern, responsive websites with a focus on performance."],
   ["pencil-square", "UI/UX Design", "Clean and functional interfaces."],

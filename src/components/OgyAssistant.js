@@ -5,6 +5,7 @@ import "@/styles/OgyAssistant.css";
 
 import { useEffect, useRef, useState } from "react";
 import { projects } from "@/data/projects";
+import { technologies } from "@/data/technologies";
 
 const initialMessage = {
   sender: "ogy",
@@ -148,7 +149,7 @@ export default function OgyAssistant() {
     ) {
       return {
         text:
-          "Ognjen works with JavaScript, HTML, CSS, Bootstrap, React, Next.js, SQL, Supabase, Git and GitHub.",
+          `Ognjen works with ${technologies.join(", ")}.`,
 
         action: {
           label: "VIEW SKILLS",
@@ -223,14 +224,12 @@ export default function OgyAssistant() {
     }
 
     if (
-      text.includes("among") ||
-      text.includes("multiplayer")
+      text.includes("meetogy") ||
+      text.includes("meet ogy")
     ) {
       return {
         text:
-          "AmongMP is a multiplayer server project featuring custom gameplay systems, player roles, server-side logic and database integration.",
-
-        project: "amongmp",
+          "MeetOgy is currently a private project idea.",
       };
     }
 
@@ -248,11 +247,11 @@ export default function OgyAssistant() {
     ) {
       return {
         text:
-          "His current portfolio stack includes JavaScript, React, Next.js, HTML, CSS, Bootstrap, SQL, Supabase, Git and GitHub.",
+          `His current portfolio stack includes ${technologies.join(", ")}.`,
 
         action: {
           label: "VIEW SKILLS",
-          target: "#about",
+          target: "#stack",
         },
       };
     }
