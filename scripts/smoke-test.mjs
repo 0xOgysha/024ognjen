@@ -19,7 +19,7 @@ const archive = await fetch(`${base}/projects`);
 assert.equal(archive.status, 200, 'Project archive route failed');
 assert.ok((await archive.text()).includes('Filter projects'), 'Archive filters missing');
 assert.equal((await fetch(`${base}/projects/does-not-exist`)).status, 404);
-const sources = await Promise.all(['src/data/projects.js', 'src/components/ProjectCard.js', 'src/app/page.js'].map(file => readFile(new URL(`../${file}`, import.meta.url), 'utf8')));
+const sources = await Promise.all(['src/data/projects.js', 'src/data/projectPreviews.js', 'src/components/ProjectCard.js', 'src/app/page.js'].map(file => readFile(new URL(`../${file}`, import.meta.url), 'utf8')));
 const assets = new Set(sources.join('\n').match(/\/(?:projects|images)\/[^"\s]+\.(?:png|jpg)/g));
 for (const asset of assets) {
   await access(new URL(`../public${asset}`, import.meta.url));

@@ -6,5 +6,6 @@
 - Existing project images: supplied portfolio ZIP.
 - Pljeskovac detail-gallery screenshots: captured directly from the supplied Pljeskovac website (desktop home, story section, mobile home).
 - Inter font files: supplied Pljeskovac archive, SIL Open Font License, included at public/fonts/Inter-OFL.txt. Fonts are served locally.
+- Hover walkthroughs use actual supplied screenshots, plus a full-page capture of the supplied Pljeskovac home page at `public/projects/pljeskovac-016/scroll-preview.jpg`. They are local animated previews, not embedded live websites or generated footage.
 
 The Pljeskovac server-side menu and delivery pages require PHP/BizCore and are not included as runnable services in this portfolio. The portfolio presents the project through its own detail page and real screenshots.

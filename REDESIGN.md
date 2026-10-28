@@ -29,3 +29,7 @@ Pljeskovac is showcased as a project. Its PHP/BizCore services are separate from
 Current illustrations were generated using built-in ImageGen from the supplied neon reference. IMAGE_PROMPTS.md records the saved asset paths and exact briefs. They are decorative covers, while project galleries retain actual website captures. The homepage count uses four showcased projects rather than an unverified completion statistic.
 
 Work belongs on feature/portfolio-redesign. The main branch is not a deployment target for this handoff.
+
+## Hover walkthroughs
+
+Hovering or keyboard-focusing a project card replaces its cover with a small scrolling website preview. Pljeskovac uses a genuine full-page capture; the two bakery/ice-cream projects scroll through the supplied screenshots. AmongMP keeps its illustration because no actual gameplay capture is available. Preview assets load only after first activation, wait until all images are ready, and fall back to the cover on errors. Leaving the card resets playback. Reduced-motion preferences and touch navigation retain the normal static cover.
