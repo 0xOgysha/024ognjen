@@ -23,6 +23,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
+export function generateStaticParams() {
+  return projects.map(({ slug }) => ({ slug }));
+}
+
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
 

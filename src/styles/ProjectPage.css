@@ -4,7 +4,7 @@
 
 .project-page {
   min-height: 100vh;
-  background: #03070c;
+  background: #080e19;
   color: var(--white);
 }
 
@@ -796,4 +796,15 @@
   .project-page-nav,.project-page-hero,.project-showcase,.project-details,.project-features,.project-gallery,.project-page-bottom { padding-left:20px; padding-right:20px; }
   .project-page-nav .brand { font-size:12px; }
   .back-projects { font-size:7px; }
+}
+
+/* Keep long project names and portrait screenshots readable on small screens. */
+.project-page-nav .brand { font-size:20px; font-weight:800; letter-spacing:-.8px; }
+.project-page-nav .brand-number { color:var(--blue); }
+.project-page-hero h1 { overflow-wrap:anywhere; }
+.project-gallery-image img { object-fit:contain; height:auto; }
+@media (max-width:768px) {
+  .project-page-hero h1 { font-size:clamp(42px,12vw,80px); line-height:1.05; letter-spacing:-2px; }
+  .project-showcase-image { min-height:0; }
+  .project-page-nav .brand { font-size:14px; }
 }

@@ -18,7 +18,7 @@ export default function CustomCursor() {
       "(hover: hover) and (pointer: fine)"
     ).matches;
 
-    if (!canHover) return;
+    if (!canHover || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const moveX = gsap.quickTo(cursor, "x", {
       duration: 0.18,

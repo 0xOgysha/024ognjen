@@ -188,6 +188,10 @@ export default function OgyAssistant() {
       PROJECTS
     */
 
+    if (text.includes("pljeskovac") || text.includes("pljeskav")) {
+      return { text: "Pljeskovac 016 is a complete restaurant website with menu and ordering information, responsive layouts and an interactive delivery zone map.", project: "pljeskovac-016" };
+    }
+
     if (
       text.includes("sladoled") ||
       text.includes("ice cream")
@@ -439,6 +443,9 @@ export default function OgyAssistant() {
   return (
     <>
       <div
+        inert={!isOpen}
+        role="dialog"
+        aria-label="OGY V1 portfolio assistant"
         className={`ogy-panel ${
           isOpen
             ? "ogy-panel-open"
@@ -642,6 +649,7 @@ export default function OgyAssistant() {
               )
             }
             placeholder="Ask Ogy something..."
+            aria-label="Message Ogy"
             autoComplete="off"
             maxLength={150}
           />
@@ -703,6 +711,7 @@ export default function OgyAssistant() {
             )
             }
             aria-label="Open Ogy assistant"
+            aria-expanded={isOpen}
         >
         <span className="ogy-trigger-status">
         <i></i>
