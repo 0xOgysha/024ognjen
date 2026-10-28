@@ -1,0 +1,265 @@
+/* =========================================
+   ABOUT / 024-03
+========================================= */
+
+.about-section {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 15% 40%,
+      rgba(0, 88, 171, 0.07),
+      transparent 30%
+    ),
+    #03070c;
+
+  border-top: 1px solid var(--border);
+}
+
+.about-top {
+  min-height: 160px;
+
+  padding: 55px 5vw 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label,
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: "DM Mono", monospace;
+}
+
+.section-label span,
+.contact-label span {
+  color: var(--blue-bright);
+  font-size: 11px;
+}
+
+.section-label div,
+.contact-label div {
+  width: 45px;
+  height: 1px;
+
+  background: rgba(255,255,255,0.2);
+}
+
+.section-label p,
+.contact-label p {
+  margin: 0;
+
+  color: #58636e;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.about-index {
+  color: #3e4852;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.about-main {
+  min-height: 700px;
+
+  padding: 120px 8vw;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 10vw;
+}
+
+.about-small {
+  color: #55606b;
+
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.about-title h2 {
+  margin-top: 30px;
+
+  color: #eef1f4;
+
+  font-size: clamp(65px, 8vw, 130px);
+  font-weight: 800;
+
+  letter-spacing: -0.075em;
+  line-height: 0.79;
+}
+
+.about-title h2 span {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(255,255,255,0.28);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 45px;
+}
+
+.about-copy {
+  max-width: 520px;
+}
+
+.about-copy p {
+  color: #697580;
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.about-copy .about-lead {
+  margin-bottom: 30px;
+
+  color: #adb5bd;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.about-location {
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-location > span {
+  margin-bottom: 12px;
+
+  color: #48535e;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.about-location strong {
+  color: #929ca6;
+
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 1.5px;
+}
+
+.about-location small {
+  margin-top: 10px;
+
+  color: #39434d;
+
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+}
+
+
+/* SKILLS */
+
+.skills-area {
+  padding: 0 8vw 120px;
+}
+
+.skills-heading {
+  padding-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+
+  color: #4b5661;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.skills-heading span:last-child {
+  color: var(--blue-bright);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skill-item {
+  min-height: 110px;
+
+  padding: 25px 20px;
+
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  align-items: center;
+
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+
+  transition:
+    background 0.25s ease,
+    padding 0.25s ease;
+}
+
+.skill-item:nth-child(3n) {
+  border-right: 0;
+}
+
+.skill-item:hover {
+  padding-left: 27px;
+
+  background: rgba(0,88,171,0.055);
+}
+
+.skill-number {
+  color: #3d4853;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+}
+
+.skill-item strong {
+  color: #929da7;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.skill-plus {
+  color: #3e4954;
+
+  font-family: "DM Mono", monospace;
+}
+
+.skill-item:hover .skill-plus {
+  color: var(--blue-bright);
+}
+@media (max-width: 768px) {
+  .about-section { overflow:hidden; }
+  .about-top { padding:46px 24px 34px; }
+  .about-main { padding:82px 24px; display:block; }
+  .about-title h2 { font-size:clamp(58px,18vw,92px); line-height:.82; overflow-wrap:normal; }
+  .about-content { width:100%; min-width:0; margin-top:55px; }
+  .about-copy { width:100%; max-width:100%; margin:0; }
+  .about-copy p { max-width:100%; }
+  .about-location { margin-top:46px; }
+  .skills-area { padding-left:24px; padding-right:24px; }
+}
+@media (max-width:430px) { .about-top,.about-main,.skills-area { padding-left:20px; padding-right:20px; } }

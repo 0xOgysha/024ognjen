@@ -1,0 +1,129 @@
+/* =========================================
+   CUSTOM CURSOR
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+
+  input,
+  textarea {
+    cursor: text;
+  }
+
+  .custom-cursor {
+    position: fixed;
+
+    z-index: 99999;
+
+    top: 0;
+    left: 0;
+
+    width: 18px;
+    height: 18px;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+      opacity 0.2s ease,
+      width 0.2s ease,
+      height 0.2s ease,
+      filter 0.2s ease;
+
+    will-change: transform;
+  }
+
+  .custom-cursor-visible {
+    opacity: 1;
+  }
+
+  .custom-cursor-horizontal,
+  .custom-cursor-vertical {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    background: #0878e8;
+
+    box-shadow:
+      0 0 7px rgba(8, 120, 232, 0.8);
+  }
+
+  .custom-cursor-horizontal {
+    width: 14px;
+    height: 1px;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-cursor-vertical {
+    width: 1px;
+    height: 14px;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-cursor-hover {
+    width: 30px;
+    height: 30px;
+
+    filter:
+      drop-shadow(
+        0 0 7px rgba(0, 88, 171, 0.7)
+      );
+  }
+
+  .custom-cursor-hover
+  .custom-cursor-horizontal {
+    width: 22px;
+  }
+
+  .custom-cursor-hover
+  .custom-cursor-vertical {
+    height: 22px;
+  }
+}
+.about-section::before,
+.contact-section::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 5;
+
+  top: -1px;
+  left: 8vw;
+
+  width: 70px;
+  height: 1px;
+
+  background: #0058ab;
+
+  box-shadow:
+    0 0 12px rgba(0,88,171,0.7);
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+

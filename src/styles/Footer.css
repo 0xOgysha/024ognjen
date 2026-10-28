@@ -1,0 +1,166 @@
+/* =========================================
+   FOOTER
+========================================= */
+
+.portfolio-footer {
+  padding: 55px 5vw 30px;
+
+  background: #020509;
+
+  border-top: 1px solid var(--border);
+}
+
+.footer-top {
+  min-height: 110px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.footer-brand {
+  color: #89939d;
+
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.footer-signature {
+  margin: 0;
+
+  color: #626b74;
+
+  text-align: center;
+
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+
+  transform: rotate(-2deg);
+}
+
+.footer-socials {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-socials a {
+  color: #59636d;
+
+  font-size: 13px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--blue-bright);
+
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  padding-top: 25px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  color: #343d46;
+
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 1.4px;
+}
+
+.footer-bottom span:nth-child(2) {
+  text-align: center;
+}
+
+.footer-bottom a {
+  justify-self: end;
+
+  color: #4b5660;
+
+  transition: 0.2s ease;
+}
+
+.footer-bottom a:hover {
+  color: white;
+}
+@media (max-width: 800px) {
+
+  .about-main {
+    padding: 90px 25px;
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .about-top {
+    padding:
+      45px 25px
+      35px;
+  }
+
+  .about-index {
+    display: none;
+  }
+
+  .skills-area {
+    padding:
+      0 25px
+      90px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-item,
+  .skill-item:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .contact-section {
+    min-height: 700px;
+
+    padding:
+      50px 25px
+      70px;
+  }
+
+  .contact-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-signature {
+    display: none;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-bottom span:nth-child(2) {
+    display: none;
+  }
+}
