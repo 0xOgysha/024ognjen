@@ -45,8 +45,7 @@ export default async function ProjectPage({ params }) {
 
       <nav className="project-page-nav">
         <Link href="/" className="brand">
-          <span className="brand-number">024/</span>
-          <span>OGNJEN</span>
+          <span className="brand-number">/024</span>
         </Link>
 
         <Link

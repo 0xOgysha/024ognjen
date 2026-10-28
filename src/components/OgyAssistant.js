@@ -86,7 +86,10 @@ export default function OgyAssistant() {
   function scrollToSection(id) {
     const section = document.querySelector(id);
 
-    if (!section) return;
+    if (!section) {
+      window.location.assign(`/${id}`);
+      return;
+    }
 
     setIsOpen(false);
 
@@ -149,7 +152,7 @@ export default function OgyAssistant() {
 
         action: {
           label: "VIEW SKILLS",
-          target: "#about",
+          target: "#stack",
         },
       };
     }

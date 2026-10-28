@@ -15,11 +15,14 @@ for (const slug of slugs) {
   const page = await response.text();
   assert.ok(page.includes('WHAT') && page.includes('INSIDE'), `Missing features: ${slug}`);
 }
+const archive = await fetch(`${base}/projects`);
+assert.equal(archive.status, 200, 'Project archive route failed');
+assert.ok((await archive.text()).includes('Filter projects'), 'Archive filters missing');
 assert.equal((await fetch(`${base}/projects/does-not-exist`)).status, 404);
-const source = await readFile(new URL('../src/data/projects.js', import.meta.url), 'utf8');
-const assets = new Set(source.match(/\/projects\/[^"\s]+\.(?:png|jpg)/g));
+const sources = await Promise.all(['src/data/projects.js', 'src/components/ProjectCard.js', 'src/app/page.js'].map(file => readFile(new URL(`../${file}`, import.meta.url), 'utf8')));
+const assets = new Set(sources.join('\n').match(/\/(?:projects|images)\/[^"\s]+\.(?:png|jpg)/g));
 for (const asset of assets) {
   await access(new URL(`../public${asset}`, import.meta.url));
   assert.equal((await fetch(`${base}${asset}`)).status, 200, `Missing asset: ${asset}`);
 }
-console.log(`PASS: home, 5 sections, ${slugs.length} project routes, unknown-route 404, ${assets.size} image assets.`);
+console.log(`PASS: home, 5 sections, project archive, ${slugs.length} project routes, unknown-route 404, ${assets.size} image assets.`);
