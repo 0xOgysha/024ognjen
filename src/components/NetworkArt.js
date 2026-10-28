@@ -1,0 +1,6 @@
+const points = [[3,126],[34,84],[41,157],[73,112],[94,62],[115,176],[128,125],[148,93],[162,36],[180,148],[194,72],[213,108],[234,13],[248,163],[258,60],[277,126],[293,32],[310,85],[329,173],[346,52],[368,117],[389,16],[410,77],[424,155],[449,111],[469,46],[492,172],[515,82],[540,130],[563,32],[580,104]];
+const edges = points.flatMap(([x,y], i) => points.slice(i + 1).map(([x2,y2], j) => ({ x,y,x2,y2,j:i+j+1 })).filter(p => Math.hypot(p.x-p.x2,p.y-p.y2) < 105));
+
+export default function NetworkArt() {
+  return <div className="network-art" aria-hidden="true"><svg viewBox="0 0 600 200" fill="none"><defs><radialGradient id="network-glow"><stop stopColor="#038eff" stopOpacity=".2" /><stop offset="1" stopColor="#038eff" stopOpacity="0" /></radialGradient></defs><ellipse cx="340" cy="105" rx="210" ry="100" fill="url(#network-glow)" /><g stroke="#0363ad" strokeWidth=".65" opacity=".6">{edges.map((p,i) => <path key={i} d={`M${p.x},${p.y} ${p.x2},${p.y2}`} />)}</g>{points.map(([cx,cy],i) => <circle key={i} className={i%4===0 ? "network-pulse" : ""} cx={cx} cy={cy} r={i%4===0 ? 2 : 1} fill="#009fff" style={{animationDelay:`${i%5}s`}} />)}<path d="m337 59 42 24v48l-42 24-42-24V83Z" fill="#020c15" stroke="#07548a" /><text x="337" y="116" fill="#009bff" textAnchor="middle" fontSize="30" fontWeight="600" fontStyle="italic">/024</text></svg></div>;
+}

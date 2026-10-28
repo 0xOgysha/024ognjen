@@ -5,6 +5,7 @@ import "@/styles/OgyAssistant.css";
 
 import { useEffect, useRef, useState } from "react";
 import { projects } from "@/data/projects";
+import { technologies } from "@/data/technologies";
 
 const initialMessage = {
   sender: "ogy",
@@ -86,7 +87,10 @@ export default function OgyAssistant() {
   function scrollToSection(id) {
     const section = document.querySelector(id);
 
-    if (!section) return;
+    if (!section) {
+      window.location.assign(`/${id}`);
+      return;
+    }
 
     setIsOpen(false);
 
@@ -145,11 +149,11 @@ export default function OgyAssistant() {
     ) {
       return {
         text:
-          "Ognjen works with JavaScript, HTML, CSS, Bootstrap, React, Next.js, SQL, Supabase, Git and GitHub.",
+          `Ognjen works with ${technologies.join(", ")}.`,
 
         action: {
           label: "VIEW SKILLS",
-          target: "#about",
+          target: "#stack",
         },
       };
     }
@@ -188,6 +192,10 @@ export default function OgyAssistant() {
       PROJECTS
     */
 
+    if (text.includes("pljeskovac") || text.includes("pljeskav")) {
+      return { text: "Pljeskovac 016 is a complete restaurant website with menu and ordering information, responsive layouts and an interactive delivery zone map.", project: "pljeskovac-016" };
+    }
+
     if (
       text.includes("sladoled") ||
       text.includes("ice cream")
@@ -216,14 +224,12 @@ export default function OgyAssistant() {
     }
 
     if (
-      text.includes("among") ||
-      text.includes("multiplayer")
+      text.includes("meetogy") ||
+      text.includes("meet ogy")
     ) {
       return {
         text:
-          "AmongMP is a multiplayer server project featuring custom gameplay systems, player roles, server-side logic and database integration.",
-
-        project: "amongmp",
+          "MeetOgy is currently a private project idea.",
       };
     }
 
@@ -241,11 +247,11 @@ export default function OgyAssistant() {
     ) {
       return {
         text:
-          "His current portfolio stack includes JavaScript, React, Next.js, HTML, CSS, Bootstrap, SQL, Supabase, Git and GitHub.",
+          `His current portfolio stack includes ${technologies.join(", ")}.`,
 
         action: {
           label: "VIEW SKILLS",
-          target: "#about",
+          target: "#stack",
         },
       };
     }
@@ -439,6 +445,9 @@ export default function OgyAssistant() {
   return (
     <>
       <div
+        inert={!isOpen}
+        role="dialog"
+        aria-label="OGY V1 portfolio assistant"
         className={`ogy-panel ${
           isOpen
             ? "ogy-panel-open"
@@ -642,6 +651,7 @@ export default function OgyAssistant() {
               )
             }
             placeholder="Ask Ogy something..."
+            aria-label="Message Ogy"
             autoComplete="off"
             maxLength={150}
           />
@@ -703,6 +713,7 @@ export default function OgyAssistant() {
             )
             }
             aria-label="Open Ogy assistant"
+            aria-expanded={isOpen}
         >
         <span className="ogy-trigger-status">
         <i></i>

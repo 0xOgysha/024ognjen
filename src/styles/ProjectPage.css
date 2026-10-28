@@ -4,9 +4,15 @@
 
 .project-page {
   min-height: 100vh;
-  background: #03070c;
+  background: #080e19;
   color: var(--white);
 }
+
+.private-project-content { min-height:calc(100svh - 100px); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:20px; padding:60px 24px; text-align:center; background:radial-gradient(ellipse,#05294655,transparent 65%); }
+.private-project-content h1 { font-size:clamp(52px,8vw,100px); letter-spacing:-3px; font-weight:600; }
+.private-project-content h1>span { color:var(--blue); }
+.private-project-content p { color:#a9bfd2; font-size:15px; }
+.private-project-label { color:#35b8ff; font-size:10px; letter-spacing:3px; }
 
 .project-page-nav {
   height: 100px;
@@ -796,4 +802,15 @@
   .project-page-nav,.project-page-hero,.project-showcase,.project-details,.project-features,.project-gallery,.project-page-bottom { padding-left:20px; padding-right:20px; }
   .project-page-nav .brand { font-size:12px; }
   .back-projects { font-size:7px; }
+}
+
+/* Keep long project names and portrait screenshots readable on small screens. */
+.project-page-nav .brand { font-size:20px; font-weight:800; letter-spacing:-.8px; }
+.project-page-nav .brand-number { color:var(--blue); }
+.project-page-hero h1 { overflow-wrap:anywhere; }
+.project-gallery-image img { object-fit:contain; height:auto; }
+@media (max-width:768px) {
+  .project-page-hero h1 { font-size:clamp(42px,12vw,80px); line-height:1.05; letter-spacing:-2px; }
+  .project-showcase-image { min-height:0; }
+  .project-page-nav .brand { font-size:14px; }
 }

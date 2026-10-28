@@ -1,5 +1,15 @@
 export const projects = [
   {
+    id: "04", slug: "pljeskovac-016", title: "Pljeskovac 016",
+    category: "real-world", categoryLabel: "REAL-WORLD", year: "2026", status: "COMPLETED",
+    description: "A complete restaurant website for Pljeskovac 016, bringing the menu, ordering information and delivery zones into one responsive experience.",
+    technologies: ["JavaScript", "HTML & CSS", "PHP", "Leaflet"],
+    image: "/projects/pljeskovac-016/home.jpg",
+    screenshots: ["/projects/pljeskovac-016/home.jpg", "/projects/pljeskovac-016/story.jpg", "/projects/pljeskovac-016/mobile.jpg"],
+    github: null, live: null,
+    features: ["Responsive restaurant website", "Food menu and ordering interface", "Interactive delivery zone map", "Local typography and image assets", "Shared PHP layout templates", "BizCore service integration"]
+  },
+  {
     id: "01",
     slug: "andjini-sladoledi",
     title: "Anđini sladoledi",
@@ -41,7 +51,6 @@ export const projects = [
     description:
       "A modern web platform for a confectionery business with product management, availability and customer contact features.",
     technologies: ["JavaScript", "Next.js", "CSS", "Supabase"],
-    image: null,
     github: null,
     live: null,
     features: [
@@ -64,6 +73,16 @@ export const projects = [
     ]
   },
 
+  {
+    id: "05", slug: "meetogy", title: "MeetOgy", private: true,
+    category: "personal", categoryLabel: "PRIVATE IDEA", year: "2026", status: "PRIVATE IDEA",
+    description: "Currently a private project idea.",
+    technologies: [], image: null, github: null, live: null, features: [],
+  },
+];
+
+// Preserve existing detail URLs without featuring the archived project in the portfolio.
+export const archivedProjects = [
   {
     id: "03",
     slug: "amongmp",
